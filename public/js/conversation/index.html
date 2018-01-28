@@ -1,0 +1,14 @@
+<button class="btn btn-primary" type="button">
+    You are logged in as {{user.name}} with id {{user.id}}
+</button>
+    
+<table class="table chat-window">
+    <tr ng-repeat="chat in conversation.chats">
+        <td>{{chat.date|date:'HH:mm:ss'}} {{chat.name}} : {{chat.body}}</td>
+    </tr>
+</table>
+    
+<div>
+    <input type="text" class="form-control" ng-model="newChat.body">
+    <button type="button" class="btn btn-danger" ng-click="send()">Action</button>
+</div>
