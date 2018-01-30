@@ -1,9 +1,8 @@
 <button class="btn btn-primary" type="button">
     You are logged in as {{user.name}} with id {{user.id}}
 </button>
-    
 <table class="table chat-window">
-    <tr ng-repeat="chat in conversation.chats">
+    <tr ng-repeat="chat in chats">
         <td>{{chat.date|date:'HH:mm:ss'}} {{chat.name}} : {{chat.body}}</td>
     </tr>
 </table>

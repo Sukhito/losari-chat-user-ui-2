@@ -3,11 +3,11 @@ app.factory('ConversationService',function($http){
         createConversation : function(userID){
             return $http.post('api/conversations',userID);
         },
-        getConversation: function(){
-            return $http.get('api/conversations');
+        getConversation: function(conversationID,userID){
+            return $http.get('api/conversations/' + conversationID + "/user/" + userID);
         },
-        sendChat: function(newChat){
-            return $http.post('api/conversations',newChat);
+        sendChat: function(conversation){
+            return $http.post('api/conversations/'+ conversation.chatId+'/chats',conversation);
         }
     }
 })
